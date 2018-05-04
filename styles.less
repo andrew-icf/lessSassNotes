@@ -1,0 +1,68 @@
+// @import 'inti';   Import another css or less file, at the top init.css (drop css)
+// @main-color: Red;  variable for color, constant, assignment - will use it's first variable it can find in it's own scope
+// @main-color: @main-color + 5%; will not work since variables are constants
+
+// body {
+//   background-color: @main-color;
+//   font-size: 4px + 4; // 8px
+//   color: #FFF / 4; // #404040
+//   color: lighten(@main-color, 10%); // color functions lighten, darken, (de)saturate, fade(in)(out), spin(color wheel), mix(two colors together)
+// }
+
+// MIXINS -  (function like), inserts more than one name/value pair, accept params and defaults and overloads, starts with a .
+// .rounded-corners-all(@size) {
+//   border-radius: @size;
+//   -webkit-border-radius: @size;
+//   -moz-border-radius: @size;
+// }
+// img {
+//   .rounded-corners-all(5px);
+// }
+
+// Mixins with guards
+// .color(@color) when (alpha(color) >= 50%) {
+//   color: Black;
+// }
+
+// Nested Rules - hierarchies imply the cascading/specificity, LESS then deconstructs it into CSS
+// nav {
+//   font-size: 10px;
+//   font-weight: bold;
+//   ul {
+//     list-style-type: none;
+//     li {              // this would be nav ul li {...}
+//       float: left;
+//       margin: auto;
+//     }
+//   }
+// }
+
+// Combinator - mix with the parent, anchor tags are a typical place for this
+// a {
+//   text-decoration: none;
+//   &:hover {
+//     text-decoration: underline;
+//   }
+// }
+// results
+// a {text-decoration: none;}
+// a:hover {text-decoration: underline;}
+
+// Namespaces - organizational grouping
+// #my-forms {
+//   .set-button {
+//     font-size: 8px;
+//     text-align: center;
+//   }
+// }
+//
+// #submit-button {
+//   #my-forms > .set-button;
+// }
+
+// String Interpolation
+// @root: '/images/';
+// @app-root: `'@{root}'.toUpperCase()`; ES6 Interpolation
+// #form {
+//   background: url('@{root}background.jpg');
+// }

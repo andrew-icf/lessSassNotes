@@ -1,0 +1,66 @@
+// Use .scss - compilies down to css
+// server side support node, asp.net, rails, JSP
+// npm install sass
+// var sass = require('saas');
+// sass.render(sassContents, function(err, css) { console.log(css);});
+// $myColor: #ffeedd; - variables start wiht a dollar sign can be colors, units, lists(like boarders)
+// font-size: 4px + 4; => 8px, operations
+//   color: lighten(@main-color, 10%); // color functions lighten, darken, (de)saturate, fade(in)(out), spin(color wheel), mix(two colors together)
+// quoted($sometext), unquoted($sometext), round, ceil, floor... etc
+// String Interpolation
+// $root: '/images/';
+// #form { background: url('#{$root}background.jpg');}
+// Rules
+// nav {
+//   font-size: 10px;
+//   font-weight: bold;
+//   ul {
+//     list-style-type: none;
+//     li {              // this would be nav ul li {...}
+//       float: left;
+//       margin: auto;
+//     }
+//   }
+// }
+// font {
+//   size: 14ps;
+//   weight: bold;
+// }
+// Directives - tell the processor to do certain things
+// @import, @mixin, @function, @extend
+// @import - importing a file directly inside of another file at a specific space
+//   Also nested imports
+//   #main {
+//     @import 'colors';
+//   }
+// @extend - extend rules from other rules, creating an inheritance inside of rules
+// .button {
+//   color: Black;
+// }
+// .submit-button {
+//   @extend a:hover;
+//   @extend .button;
+//   border: 1px Black solid;
+// }
+// @mixin - create repeatable sections of code (function like)
+// .rounded-corners-all(@size) {
+//   border-radius: @size;
+//   -webkit-border-radius: @size;
+//   -moz-border-radius: @size;
+// }
+// img {
+//   .rounded-corners-all(5px);
+// }
+// @function - allows you to create standard code that's going to be used for functional representations
+// $app-width: 900px;
+// @function column-width($cols) {
+//   @return ($app-width / $cols) - ($cols * 5px);
+// }
+// .col2 {
+//   width: column-width(2);
+// }
+// .col3 {
+//   width: column-width(3);
+// }
+// Control Directives
+// @if - included or not , @for - looping , @each - looping , @while - looping based on a test
